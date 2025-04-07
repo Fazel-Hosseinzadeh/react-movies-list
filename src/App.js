@@ -1,17 +1,10 @@
 import "./App.css";
-import MovieCard from './components/MovieCard/MovieCard'
+import Home from './pages/Home'
 
 function App() {
-  const movie = {
-    id: 1,
-    title: "Transporter 1",
-    image_URL: "https://www.google.com",
-    year: "1999",
-  }
-
   return (
     <>
-      < MovieCard movie = {movie} />
+      <Home />
     </>
   );
 }
