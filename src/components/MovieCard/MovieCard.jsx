@@ -1,3 +1,4 @@
+import './MovieCard.css'
 
 function MovieCard(props){
     const {id, title, image_URL, year} = props.movie;
