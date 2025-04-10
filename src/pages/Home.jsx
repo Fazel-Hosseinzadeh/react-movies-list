@@ -29,7 +29,8 @@ function Home() {
 
   function handleSearch(e) {
     e.preventDefault();
-    alert(searchQuery)
+    alert(searchQuery);
+    setSearchQuery("");
   }
 
   return (
