@@ -1,0 +1,46 @@
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.home{
+    background: #13011d8f;
+    min-height: 100vh;
+}
+
+.home .search-form{
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.home .search-form .search-input,
+.home .search-form .search-button{
+    margin-top: 5px;
+    padding: 7px;
+    filter: brightness(50%);
+    outline: none;
+    border: none;
+    box-shadow:  0px 0px 1px 2px #297208c9;
+    color: black;
+}
+
+.home .search-form .search-input{
+    min-width: 250px;
+    width: 30vw;
+    border-radius: 10px 0 0 10px;
+}
+
+.home .search-form .search-button{
+    border-radius: 0 10px 10px 0 ;
+}
+
+
+.home .movies{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;   
+}
+
