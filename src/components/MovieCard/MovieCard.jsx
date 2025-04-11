@@ -1,21 +1,21 @@
 import './MovieCard.css'
 
 function MovieCard(props){
-    const {id, title,  year,img_URL} = props.movie;
+    const {id, originalTitle ,primaryImage ,startYear} = props.movie;
     function onFavoritClicked(movie){
-        alert(`clicked on ${title}`)
+        alert(`clicked on ${originalTitle}`)
     }
     return (
         <>
             <div className="container">
                 <div className="card-container">
                     <div className="poster">
-                        <img src={img_URL} alt={title} />
-                        <button className="movie-like" onClick = {()=>onFavoritClicked(title)}>♥</button>
+                        <img src={primaryImage} alt={originalTitle} />
+                        <button className="movie-like" onClick = {()=>onFavoritClicked(originalTitle)}>♥</button>
                     </div>
                     <div className="movie-info">
-                        <div className="movie-title">{title}</div>
-                        <div className="movie-year">{year}</div>
+                        <div className="title">{originalTitle}</div>
+                        <div className="movie-year">{startYear}</div>
                     </div>
                 </div>
             </div>
