@@ -3,6 +3,10 @@ import { useState, useEffect } from "react";
 import './Home.css'
 import api from '../service/api.js'
 
+//---------It returns the list of Movies as an array------
+import Movies from "../service/movies.js";
+//--------------------------------------------------------
+
 function Home() {
     const [searchQuery , setSearchQuery] = useState('');
     const [movies , setMovies ] = useState([]);
@@ -12,9 +16,9 @@ function Home() {
     useEffect( () => {
       const callAPI = async ()=> {
         try{
-          const data = await api();
-          setMovies(data);
-          return ;
+          // const data = await api();
+          const data = await Movies();
+          await setMovies(data);
         }catch (err){
           console.log(err);
           return null;
