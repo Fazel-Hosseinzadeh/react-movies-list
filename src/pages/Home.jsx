@@ -48,7 +48,7 @@ function Home() {
             </form>
             <div className="movies">
                 {movies.map((movie) => (
-                movie.originalTitle.toLowerCase().startsWith(searchQuery) && (
+                movie.originalTitle.toLowerCase().includes(searchQuery) && (
                 <MovieCard movie={movie} key={movie.id}  /> )
                 ))}
 
