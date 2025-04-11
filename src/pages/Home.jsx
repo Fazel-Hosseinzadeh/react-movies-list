@@ -1,32 +1,27 @@
 import MovieCard from "../components/MovieCard/MovieCard";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import './Home.css'
+import api from '../service/api.js'
 
 function Home() {
     const [searchQuery , setSearchQuery] = useState('');
+    const [movies , setMovies ] = useState([]);
+    const [error , setError] = useState(null);
 
-  let movies = [
-    {
-      id: 1,
-      title: "Transporter 1",
-      year: 2000,
-      img_URL: "https://m.media-amazon.com/images/I/91r-Dlg5-VL._SY445_.jpg",
-    },
 
-    {
-      id: 2,
-      title: "Terminator",
-      year: 1995,
-      img_URL: "#",
-    },
-
-    {
-      id: 3,
-      title: "Freinds",
-      year: 1995,
-      img_URL: "#",
-    },
-  ];
+    useEffect( () => {
+      const callAPI = async ()=> {
+        try{
+          const data = await api();
+          setMovies(data);
+          return ;
+        }catch (err){
+          console.log(err);
+          return null;
+        }
+      }
+        callAPI();
+     }, []);
 
   function handleSearch(e) {
     e.preventDefault();
@@ -49,7 +44,7 @@ function Home() {
             </form>
             <div className="movies">
                 {movies.map((movie) => (
-                movie.title.toLowerCase().startsWith(searchQuery) && (
+                movie.originalTitle.toLowerCase().startsWith(searchQuery) && (
                 <MovieCard movie={movie} key={movie.id}  /> )
                 ))}
 
