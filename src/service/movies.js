@@ -1,10 +1,11 @@
-const STATIC_DATA = process.env.REACT_APP_STATIC_DATA
+async function Movies() {
 
+try{
+  const movies = await fetch('/data.json')
+  return await movies.json();
 
-function Movies() {
-
-const movies = STATIC_DATA;
-
-return movies;
+}catch(err){
+  console.log(err);
+}
 }
 export default Movies;
