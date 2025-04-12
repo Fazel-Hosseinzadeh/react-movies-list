@@ -39,7 +39,7 @@
     transform: scale(0.99);
     transition: 1s;
 }
-.container .card-container .poster img:hover{
+.container .card-container:hover .poster img{
     filter: brightness(100%) grayscale(0%);
     transform: scale(1.01);
 }
@@ -72,8 +72,7 @@
     bottom: 0px;
 }
 
-.container .card-container:has(.poster img:hover) .movie-info,
-.container .card-container .movie-info:hover{
+.container .card-container:hover .movie-info{
     bottom: -250px;
 }
 .container .card-container .movie-info .movie-year{
