@@ -18,11 +18,13 @@
 .container .card-container{
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
 }
 .container .card-container .poster{
     position: relative;
     width: 100%;
-    height: 250px;
     overflow: hidden;
     transition: 1s;
 }
@@ -30,7 +32,6 @@
 .container .card-container .poster img:hover{
     transform: scale(1.01);
 }
-
 
 .container .card-container .poster img{
     display: block;
@@ -61,12 +62,24 @@
 }
 
 .container .card-container .movie-info{
+    background: rgba(42, 33, 56, 0.671);
     display: block;
     padding-top: 10px;
     text-align: center;
     width: 100%;
-    margin-top: auto;
+    height: 300px;
     color: rgb(240, 234, 230);
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 15px black;
+    transition: 0.5s;
+    position: absolute;
+    bottom: -40px;
+}
+
+.container .card-container:has(.poster img:hover) .movie-info,
+.container .card-container .movie-info:hover{
+    bottom: -250px;
+    background: rgba(73, 70, 70, 0.171);
 }
 .container .card-container .movie-info .movie-year{
     font-size: smaller;
