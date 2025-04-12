@@ -26,11 +26,6 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    transition: 1s;
-}
-
-.container .card-container .poster img:hover{
-    transform: scale(1.01);
 }
 
 .container .card-container .poster img{
@@ -46,6 +41,7 @@
 }
 .container .card-container .poster img:hover{
     filter: brightness(100%) grayscale(0%);
+    transform: scale(1.01);
 }
 
 
@@ -73,13 +69,12 @@
     text-shadow: 1px 1px 15px black;
     transition: 0.5s;
     position: absolute;
-    bottom: -40px;
+    bottom: 0px;
 }
 
 .container .card-container:has(.poster img:hover) .movie-info,
 .container .card-container .movie-info:hover{
     bottom: -250px;
-    background: rgba(73, 70, 70, 0.171);
 }
 .container .card-container .movie-info .movie-year{
     font-size: smaller;
