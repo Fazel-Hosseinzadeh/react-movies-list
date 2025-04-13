@@ -23,7 +23,8 @@
     position: relative;
 }
 .container .card-container .poster{
-    position: relative;
+    position: absolute;
+    top: 0;
     width: 100%;
     overflow: hidden;
 }
@@ -69,11 +70,11 @@
     text-shadow: 1px 1px 15px black;
     transition: 0.5s;
     position: absolute;
-    bottom: 0px;
+    top: 160px;
 }
 
 .container .card-container:hover .movie-info{
-    bottom: -250px;
+    top: 300px;
 }
 .container .card-container .movie-info .movie-year{
     font-size: smaller;
