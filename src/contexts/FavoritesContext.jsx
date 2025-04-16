@@ -8,6 +8,15 @@ function  useFavoriteContext(){
 
 function FavoriteProvider({children}){
     const [favoriteMovies, setFavoriteMovies] = useState([]);
+
+    const addToFavorites = (movie) =>{
+        const {id, originalTitle ,primaryImage ,startYear} = movie;
+        if(id in favoriteMovies) return null;
+        else {
+            setFavoriteMovies( prev => [...prev , movie]);
+        } 
+    }
+
     const value = {favoriteMovies, setFavoriteMovies, addToFavorites}
     return (
         <favoritesContext.Provider value = {value} >
