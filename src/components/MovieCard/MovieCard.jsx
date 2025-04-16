@@ -1,17 +1,22 @@
 import './MovieCard.css'
+import { useFavoriteContext } from "../../contexts/FavoritesContext";
 
 function MovieCard(props){
-    const {id, originalTitle ,primaryImage ,startYear} = props.movie;
-    function onFavoritClicked(movie){
-        alert(`clicked on ${originalTitle}`)
-    }
+    const movie = props.movie;
+    const {id, originalTitle ,primaryImage ,startYear} = movie;
+    const { favoriteMovies, setFavoriteMovies, addToFavorites } = useFavoriteContext();
     return (
         <>
             <div className="container">
                 <div className="card-container">
                     <div className="poster">
                         <img src={primaryImage} alt={originalTitle} />
-                        <button className="movie-like" onClick = {()=>onFavoritClicked(originalTitle)}>♥</button>
+                        <button
+                        className="movie-like"
+                        onClick={() => addToFavorites(movie)}
+                        >
+                        ♥
+                        </button>
                     </div>
                     <div className="movie-info">
                         <div className="title">{originalTitle}</div>
@@ -20,7 +25,6 @@ function MovieCard(props){
                 </div>
             </div>
         </>
-
     );
 }
 
