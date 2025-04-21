@@ -7,9 +7,17 @@ function  useFavoriteContext(){
     }
 function FavoriteProvider({children}){
     const [favoriteMovies, setFavoriteMovies] = useState([]);
-    
+
     useEffect(()=>{
-        localStorage.setItem('favorites', JSON.stringify(favoriteMovies));
+        const storedFavorites = localStorage.getItem('favorites');
+        if(storedFavorites){
+            setFavoriteMovies(JSON.parse(storedFavorites))
+        } 
+
+    },[])
+
+    useEffect(()=>{
+        if(favoriteMovies.length !== 0) localStorage.setItem('favorites', JSON.stringify(favoriteMovies))
     },[favoriteMovies]);
 
     const addToFavorites = (movie) =>{
