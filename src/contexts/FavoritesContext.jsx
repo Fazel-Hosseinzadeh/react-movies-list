@@ -22,7 +22,7 @@ function FavoriteProvider({children}){
 
     const addToFavorites = (movie) =>{
         const {id, originalTitle ,primaryImage ,startYear} = movie;
-        if(favoriteMovies.includes(movie)){
+        if(favoriteMovies.some(fav => fav.id === movie.id )){
                 return null;
             } else {
                 setFavoriteMovies( (prev) => [...prev , movie])
