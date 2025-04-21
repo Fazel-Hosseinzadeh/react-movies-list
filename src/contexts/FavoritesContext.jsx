@@ -5,17 +5,19 @@ const favoritesContext = createContext();
 function  useFavoriteContext(){
     return useContext(favoritesContext);
     }
-
 function FavoriteProvider({children}){
     const [favoriteMovies, setFavoriteMovies] = useState([]);
+    
+    useEffect(()=>{
+        localStorage.setItem('favorites', JSON.stringify(favoriteMovies));
+    },[favoriteMovies]);
 
     const addToFavorites = (movie) =>{
         const {id, originalTitle ,primaryImage ,startYear} = movie;
         if(favoriteMovies.includes(movie)){
                 return null;
             } else {
-            setFavoriteMovies( prev => [...prev , movie]);
-            localStorage.setItem('favorites', JSON.stringify(favoriteMovies) );
+                setFavoriteMovies( (prev) => [...prev , movie])
         } 
     }
 
