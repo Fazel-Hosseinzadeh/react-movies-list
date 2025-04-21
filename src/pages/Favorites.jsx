@@ -3,7 +3,6 @@ import MovieCard from "../components/MovieCard/MovieCard";
 
 function Favorites(){
     const {favoriteMovies, setFavoriteMovies, addToFavorites} = useFavoriteContext();
-    console.log(favoriteMovies);
     return(
 
         <>

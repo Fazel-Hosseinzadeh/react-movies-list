@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 const favoritesContext = createContext();
 
@@ -11,9 +11,11 @@ function FavoriteProvider({children}){
 
     const addToFavorites = (movie) =>{
         const {id, originalTitle ,primaryImage ,startYear} = movie;
-        if(id in favoriteMovies) return null;
-        else {
+        if(favoriteMovies.includes(movie)){
+                return null;
+            } else {
             setFavoriteMovies( prev => [...prev , movie]);
+            localStorage.setItem('favorites', JSON.stringify(favoriteMovies) );
         } 
     }
 
