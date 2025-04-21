@@ -28,6 +28,10 @@ function FavoriteProvider({children}){
                 setFavoriteMovies( (prev) => [...prev , movie])
         } 
     }
+    
+    const isFavorite = (id)=>{
+        return favoriteMovies.some(item => item.id === id);
+    }
 
     const value = {favoriteMovies, setFavoriteMovies, addToFavorites}
     return (
