@@ -4,7 +4,7 @@ import { useFavoriteContext } from "../../contexts/FavoritesContext";
 function MovieCard(props){
     const movie = props.movie;
     const {id, originalTitle ,primaryImage ,startYear} = movie;
-    const { favoriteMovies, setFavoriteMovies, addToFavorites, isFavorite } = useFavoriteContext();
+    const { favoriteMovies, setFavoriteMovies, toggleFavorites, isFavorite } = useFavoriteContext();
     
     return (
         <>
@@ -14,7 +14,7 @@ function MovieCard(props){
                         <img src={primaryImage} alt={originalTitle} />
                         <button
                         className = {`movie-like ${isFavorite(id) ? "active" : ""}`} 
-                        onClick={() => addToFavorites(movie)}
+                        onClick={() => toggleFavorites(movie)}
                         >
                         ♥
                         </button>
