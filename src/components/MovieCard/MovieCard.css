@@ -58,7 +58,7 @@
     height: 30px;
     font-size: 1.5rem;
     background: #9c96cc48;  
-    transition: 0.5s;
+    transition: 0.2s;
 }
 .container .card-container .poster .movie-like.active{
     color: red;
