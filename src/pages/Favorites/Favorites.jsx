@@ -1,5 +1,6 @@
 import { useFavoriteContext } from "../../contexts/FavoritesContext";
 import MovieCard from "../../components/MovieCard/MovieCard";
+import "./Favorites.css"
 
 function Favorites(){
     const {favoriteMovies, setFavoriteMovies, addToFavorites} = useFavoriteContext();

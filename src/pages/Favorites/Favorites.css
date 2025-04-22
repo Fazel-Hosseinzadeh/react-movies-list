@@ -1,0 +1,23 @@
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    
+}
+
+p{
+    background: #13011d8f;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+    text-shadow: 0px 0px 5px green;
+}
+
+.movies{
+    display: flex;
+    flex-wrap: wrap;
+    background: #13011d8f;
+    min-height: 100vh;
+}
