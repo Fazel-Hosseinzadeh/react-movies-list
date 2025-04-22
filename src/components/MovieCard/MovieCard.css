@@ -51,16 +51,20 @@
     top: 5px;
     right: 10px;
     color: white;
+    text-shadow: 0px 0px 15px black;
     border-radius: 50%;
-    width: 25px;
-    height: 25px;
-    font-size: larger;
-    background: #22222255;
+    border: white 1px solid;
+    width: 30px;
+    height: 30px;
+    font-size: 1.5rem;
+    background: #9c96cc48;  
+    transition: 0.5s;
 }
-
 .container .card-container .poster .movie-like.active{
     color: red;
+    text-shadow: 0px 0px 5px #dff800;
 }
+
 
 .container .card-container .movie-info{
     background: rgba(42, 33, 56, 0.671);
