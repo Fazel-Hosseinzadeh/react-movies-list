@@ -1,10 +1,10 @@
-import MovieCard from "../components/MovieCard/MovieCard";
+import MovieCard from "../../components/MovieCard/MovieCard";
 import { useState, useEffect } from "react";
 import './Home.css'
-import api from '../service/api.js'
+import api from '../../service/api.js'
 
 //---------It returns the list of Movies as an array------
-import Movies from "../service/movies.js";
+import Movies from "../../service/movies.js";
 //--------------------------------------------------------
 
 function Home() {
