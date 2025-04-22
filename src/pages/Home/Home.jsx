@@ -16,8 +16,8 @@ function Home() {
     useEffect( () => {
       const callAPI = async ()=> {
         try{
-          // const data = await api();
-          const data = await Movies();
+          const data = await api();
+          // const data = await Movies();
           await setMovies(data);
         }catch (err){
           console.log(err);
