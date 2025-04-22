@@ -22,10 +22,11 @@ function FavoriteProvider({children}){
         if(favoriteMovies.length !== 0) localStorage.setItem('favorites', JSON.stringify(favoriteMovies))
     },[favoriteMovies]);
 
-    const addToFavorites = (movie) =>{
+    const toggleFavorites = (movie) =>{
         const {id, originalTitle ,primaryImage ,startYear} = movie;
         if(favoriteMovies.some(fav => fav.id === movie.id )){
-                return null;
+            setFavoriteMovies( (prev) => prev.filter((item)=>item.id !== movie.id))
+
             } else {
                 setFavoriteMovies( (prev) => [...prev , movie])
         } 
@@ -35,7 +36,7 @@ function FavoriteProvider({children}){
         return favoriteMovies.some(item => item.id === id);
     }
 
-    const value = {favoriteMovies, setFavoriteMovies, addToFavorites, isFavorite}
+    const value = {favoriteMovies, setFavoriteMovies, toggleFavorites, isFavorite}
     return (
         <favoritesContext.Provider value = {value} >
             {children}
