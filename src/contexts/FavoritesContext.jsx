@@ -5,6 +5,8 @@ const favoritesContext = createContext();
 function  useFavoriteContext(){
     return useContext(favoritesContext);
     }
+
+
 function FavoriteProvider({children}){
     const [favoriteMovies, setFavoriteMovies] = useState([]);
 
@@ -33,7 +35,7 @@ function FavoriteProvider({children}){
         return favoriteMovies.some(item => item.id === id);
     }
 
-    const value = {favoriteMovies, setFavoriteMovies, addToFavorites}
+    const value = {favoriteMovies, setFavoriteMovies, addToFavorites, isFavorite}
     return (
         <favoritesContext.Provider value = {value} >
             {children}
