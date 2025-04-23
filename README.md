@@ -24,9 +24,6 @@ A simple React.js web application that fetches and displays the top 250 most pop
 
 ## 🔧 How to Run
 
-
-## 🔧 How to Run
-
 1. Clone the repo:
 ```bash
 git clone https://github.com/your-username/imdb-movie-explorer.git
@@ -45,7 +42,7 @@ REACT_APP_BASE_URL = your_api_url_here
 npm start
 ```
 
-🚀 Deployment
+##  🚀 Deployment
 You can deploy this app for free using:
 
 +   [Vercel](https://vercel.com/)
